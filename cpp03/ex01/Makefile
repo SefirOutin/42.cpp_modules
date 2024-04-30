@@ -1,0 +1,35 @@
+NAME		=	ScavTrap
+
+SRCS_DIR	=	srcs
+OBJS_DIR	=	obj
+
+SRCS		=	srcs/main.cpp \
+				srcs/ClapTrap.cpp \
+				srcs/ScavTrap.cpp
+
+OBJS	=	$(patsubst $(SRCS_DIR)/%.cpp,$(OBJS_DIR)/%.o,$(SRCS))
+
+RM	=	rm -rf
+CXX	=	clang++
+FLAGS	=	-I./inc -Wall -Wextra -Werror -std=c++98
+
+$(NAME):	$(OBJS)
+	$(CXX) $(FLAGS) $^ -o $@
+
+$(OBJS_DIR)/%.o:	$(SRCS_DIR)/%.cpp | $(OBJS_DIR)
+	$(CXX) $(FLAGS) -c $< -o $@
+
+$(OBJS_DIR):
+	mkdir -p $(OBJS_DIR)
+
+all:	$(NAME)
+
+clean:
+	$(RM) $(OBJS_DIR)
+
+fclean:	clean
+	$(RM) $(NAME)
+
+re:	fclean all
+
+.PHONY:	all clean fclean re
