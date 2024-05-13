@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
+/*   MateriaSource.class.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soutin <soutin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 17:14:21 by soutin            #+#    #+#             */
-/*   Updated: 2024/04/29 20:06:28 by soutin           ###   ########.fr       */
+/*   Updated: 2024/05/07 16:14:03 by soutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "MateriaSource.hpp"
+#include "MateriaSource.class.hpp"
 
 MateriaSource::MateriaSource()
 {
@@ -51,10 +51,11 @@ void MateriaSource::learnMateria(AMateria* type)
 {
 	for (int i = 0; i < 4; i++)
 	{
+		if (_slot[i] == type)
+			return ;
 		if (!_slot[i])
 		{
-			_slot[i] = type->clone();
-			delete type;
+			_slot[i] = type;
 			return ;	
 		}
 	}
@@ -65,7 +66,7 @@ AMateria *MateriaSource::createMateria(std::string const & type)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (_slot[i]->getType() == type)
+		if (_slot[i] && _slot[i]->getType() == type)
 			return (_slot[i]->clone());
 	}
 	std::cout << "Unknown type" << std::endl;

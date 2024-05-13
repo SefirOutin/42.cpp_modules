@@ -6,7 +6,7 @@
 /*   By: soutin <soutin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:03:44 by soutin            #+#    #+#             */
-/*   Updated: 2024/04/30 16:20:52 by soutin           ###   ########.fr       */
+/*   Updated: 2024/05/07 16:08:43 by soutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,15 @@
 #include "Character.class.hpp"
 #include "AMateria.class.hpp"
 #include "ICharacter.class.hpp"
-#include "MateriaSource.hpp"
+#include "MateriaSource.class.hpp"
 
 int main()
 {
 	AMateria	*garbage[10];
 	IMateriaSource* src = new MateriaSource();
+	Ice *ice = new Ice();
+	src->learnMateria(ice);
+	src->learnMateria(ice);
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
 	ICharacter* me = new Character("me");
@@ -38,13 +41,15 @@ int main()
 	me->use(0, *bob);
 	*static_cast<Character *>(bob) = *static_cast<Character *>(me);
 	bob->use(1, *me);
-	tmp = src->createMateria("cure");
+	tmp = src->createMateria("currrgrgg");
 	me->equip(tmp);
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	tmp = src->createMateria("ice");
 	me->equip(tmp);
 
 	delete tmp;

@@ -6,7 +6,7 @@
 /*   By: soutin <soutin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 13:40:53 by soutin            #+#    #+#             */
-/*   Updated: 2024/04/29 20:07:02 by soutin           ###   ########.fr       */
+/*   Updated: 2024/05/07 16:06:32 by soutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ const std::string &Character::getName() const
 
 AMateria *Character::getSlot(int idx) const
 {
+	if (idx < 0 || idx > 3)
+		return (NULL);
 	return (_slot[idx]);
 }
 
@@ -68,6 +70,8 @@ void Character::equip(AMateria *m)
 {
 	for (int i = 0; i < 4; i++)
 	{
+		if (_slot[i] == m)
+			return ;
 		if (!_slot[i])
 		{
 			_slot[i] = m;
@@ -79,14 +83,14 @@ void Character::equip(AMateria *m)
 
 void Character::unequip(int idx)
 {
-	if (idx < 0 || idx > 4 || !_slot[idx])	
+	if (idx < 0 || idx >= 4 || !_slot[idx])	
 		return ;
 	_slot[idx] = NULL;
 }
 
 void Character::use(int idx, ICharacter &target)
 {
-	if (idx < 0 || idx > 4 || !_slot[idx])	
+	if (idx < 0 || idx >= 4 || !_slot[idx])	
 		return ;
 	_slot[idx]->use(target);
 }

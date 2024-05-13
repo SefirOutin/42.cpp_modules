@@ -8,13 +8,13 @@ SRCS		=	srcs/main.cpp \
 				srcs/Cure.class.cpp \
 				srcs/Ice.class.cpp \
 				srcs/Character.class.cpp \
-				srcs/MateriaSource.cpp
+				srcs/MateriaSource.class.cpp
 
 OBJS	=	$(patsubst $(SRCS_DIR)/%.cpp,$(OBJS_DIR)/%.o,$(SRCS))
 
 RM	=	rm -rf
 CXX	=	c++
-FLAGS	=	-I./inc -Wall -Wextra -Werror -std=c++98
+FLAGS	=	-I./inc -Wall -Wextra -Werror -std=c++98 -g3
 
 $(NAME):	$(OBJS)
 	$(CXX) $(FLAGS) $^ -o $@
