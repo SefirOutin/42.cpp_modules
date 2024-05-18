@@ -6,7 +6,7 @@
 /*   By: soutin <soutin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 13:35:39 by soutin            #+#    #+#             */
-/*   Updated: 2024/05/16 14:31:20 by soutin           ###   ########.fr       */
+/*   Updated: 2024/05/16 14:33:58 by soutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,8 @@ class RobotomyRequestForm: public AForm
 
 		void	execute(Bureaucrat const & executor) const;
 };
+
+
+
 
 #endif

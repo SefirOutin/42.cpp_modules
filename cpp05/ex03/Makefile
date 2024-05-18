@@ -1,4 +1,4 @@
-NAME		=	execForms
+NAME		=	Intern
 
 SRCS_DIR	=	srcs
 OBJS_DIR	=	objs
@@ -8,7 +8,8 @@ SRCS		=	srcs/main.cpp \
 				srcs/AForm.class.cpp \
 				srcs/ShrubberyCreationForm.class.cpp \
 				srcs/PresidentialPardonForm.class.cpp \
-				srcs/RobotomyRequestForm.class.cpp
+				srcs/RobotomyRequestForm.class.cpp \
+				srcs/Intern.class.cpp
 
 OBJS	=	$(patsubst $(SRCS_DIR)/%.cpp,$(OBJS_DIR)/%.o,$(SRCS))
 

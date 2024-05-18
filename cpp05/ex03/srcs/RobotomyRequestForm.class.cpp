@@ -6,7 +6,7 @@
 /*   By: soutin <soutin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 13:36:23 by soutin            #+#    #+#             */
-/*   Updated: 2024/05/16 17:28:31 by soutin           ###   ########.fr       */
+/*   Updated: 2024/05/18 13:17:43 by soutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ const char *RobotomyRequestForm::FormNotSignedException::what() const throw()
 RobotomyRequestForm::RobotomyRequestForm(std::string target):
 	AForm(target, 72, 45)
 {
+	
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other):
@@ -29,6 +30,7 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other):
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
+	
 }
 
 RobotomyRequestForm	&RobotomyRequestForm::operator=(const RobotomyRequestForm &other)
@@ -36,6 +38,7 @@ RobotomyRequestForm	&RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 	(void)other;
 	return (*this);
 }
+
 
 void	RobotomyRequestForm::execute(const Bureaucrat &executor) const
 {

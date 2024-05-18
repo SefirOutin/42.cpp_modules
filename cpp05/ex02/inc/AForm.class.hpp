@@ -6,7 +6,7 @@
 /*   By: soutin <soutin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 13:28:01 by soutin            #+#    #+#             */
-/*   Updated: 2024/05/15 16:02:24 by soutin           ###   ########.fr       */
+/*   Updated: 2024/05/16 14:29:45 by soutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,12 @@ class AForm
 		class GradeTooLowException : public std::exception
 		{
 			public:
-				virtual const char *what() const throw()
-				{
-					return ("Form::GradeTooLowException");
-				}
+				virtual const char *what() const throw();
 		};
 		class GradeTooHighException : public std::exception
 		{
 			public:
-				virtual const char *what() const throw()
-				{
-					return ("Form::GradeTooHighException");
-				}
+				virtual const char *what() const throw();
 		};
 
 		AForm &operator=(const AForm &other);

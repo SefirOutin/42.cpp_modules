@@ -6,7 +6,7 @@
 /*   By: soutin <soutin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 14:29:35 by soutin            #+#    #+#             */
-/*   Updated: 2024/05/15 16:00:22 by soutin           ###   ########.fr       */
+/*   Updated: 2024/05/16 14:26:57 by soutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,12 @@ class Bureaucrat
 		class GradeTooLowException : public std::exception
 		{
 			public:
-				virtual const char *what() const throw()
-				{
-					return ("Bureaucrat::GradeTooLowException");
-				}
+				virtual const char *what() const throw();
 		};
 		class GradeTooHighException : public std::exception
 		{
 			public:
-				virtual const char *what() const throw()
-				{
-					return ("Bureaucrat::GradeTooHighException");
-				}
+				virtual const char *what() const throw();
 		};
 		
 		Bureaucrat &operator=(const Bureaucrat &other);

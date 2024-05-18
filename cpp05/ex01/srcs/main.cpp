@@ -6,12 +6,12 @@
 /*   By: soutin <soutin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 14:37:22 by soutin            #+#    #+#             */
-/*   Updated: 2024/05/15 17:50:53 by soutin           ###   ########.fr       */
+/*   Updated: 2024/05/16 14:02:30 by soutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.class.hpp"
-#include "Form.hpp"
+#include "Form.class.hpp"
 
 int	main()
 {
@@ -21,7 +21,7 @@ int	main()
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
 	try
 	{
@@ -29,7 +29,7 @@ int	main()
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
 	try
 	{
@@ -40,7 +40,7 @@ int	main()
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
 	try
 	{
@@ -53,11 +53,10 @@ int	main()
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
 	Form	valid("yes", 50, 25);
 	std::cout << valid << std::endl;
 	Form	copy(valid);
 	std::cout << "copy " << copy << std::endl;
-	
 }

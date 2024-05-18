@@ -5,7 +5,7 @@ OBJS_DIR	=	objs
 
 SRCS		=	srcs/main.cpp \
 				srcs/Bureaucrat.class.cpp \
-				srcs/Form.cpp
+				srcs/Form.class.cpp
 
 OBJS	=	$(patsubst $(SRCS_DIR)/%.cpp,$(OBJS_DIR)/%.o,$(SRCS))
 

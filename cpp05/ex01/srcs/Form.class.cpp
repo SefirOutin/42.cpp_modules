@@ -1,16 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   Form.class.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soutin <soutin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 13:29:15 by soutin            #+#    #+#             */
-/*   Updated: 2024/05/15 16:01:53 by soutin           ###   ########.fr       */
+/*   Updated: 2024/05/16 14:28:35 by soutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "Form.class.hpp"
+
+const char *Form::GradeTooLowException::what() const throw()
+{
+	return ("Form::GradeTooLowException");
+}
+
+const char *Form::GradeTooHighException::what() const throw()
+{
+	return ("Form::GradeTooHighException");
+}
 
 Form::Form(std::string name, int gradeToSign, int gradeToExec):
 	_name(name),

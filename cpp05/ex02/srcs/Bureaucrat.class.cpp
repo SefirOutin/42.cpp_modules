@@ -6,11 +6,21 @@
 /*   By: soutin <soutin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 14:34:52 by soutin            #+#    #+#             */
-/*   Updated: 2024/05/15 16:02:39 by soutin           ###   ########.fr       */
+/*   Updated: 2024/05/16 14:26:28 by soutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.class.hpp"
+
+const char *Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("Bureaucrat::GradeTooLowException");
+}
+
+const char *Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("Bureaucrat::GradeTooHighException");
+}
 
 Bureaucrat::Bureaucrat(const std::string name, int grade):
 	_name(name),

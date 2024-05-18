@@ -6,7 +6,7 @@
 /*   By: soutin <soutin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 14:34:52 by soutin            #+#    #+#             */
-/*   Updated: 2024/05/16 14:26:04 by soutin           ###   ########.fr       */
+/*   Updated: 2024/05/16 14:26:35 by soutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
 	return ("Bureaucrat::GradeTooHighException");
 }
-
 
 Bureaucrat::Bureaucrat(const std::string name, int grade):
 	_name(name),
@@ -73,7 +72,7 @@ void	Bureaucrat::decrementGrade()
 	_grade++;
 }
 
-void	Bureaucrat::signForm(Form &form)
+void	Bureaucrat::signForm(AForm &form)
 {
 	try {
 		form.beSigned(*this);
@@ -84,7 +83,18 @@ void	Bureaucrat::signForm(Form &form)
 	}
 }
 
-std::ostream&	operator<<(std::ostream& outs, const Bureaucrat &input)
+void	Bureaucrat::executeForm(const AForm &form)
+{
+	try {
+		form.execute(*this);
+		std::cout << *this << " executed " << form.getName() << std::endl;
+	}
+	catch (const std::exception& e) {
+		std::cerr << *this << " couldn’t execute " << form.getName() << " because " << e.what() << std::endl;
+	}
+}
+
+std::ostream	&operator<<(std::ostream& outs, const Bureaucrat &input)
 {
 	outs << input.getName() << ", bureaucrat grade: " << input.getGrade();
 	return (outs);

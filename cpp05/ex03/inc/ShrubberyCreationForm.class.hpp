@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.class.hpp                      :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.class.hpp                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soutin <soutin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/13 13:35:39 by soutin            #+#    #+#             */
-/*   Updated: 2024/05/16 14:31:20 by soutin           ###   ########.fr       */
+/*   Created: 2024/05/13 13:34:57 by soutin            #+#    #+#             */
+/*   Updated: 2024/05/16 14:33:55 by soutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMYREQUESTFORM_HPP
-#define ROBOTOMYREQUESTFORM_HPP
+#ifndef SHRUBBERYCREATIONFORM_HPP
+#define SHRUBBERYCREATIONFORM_HPP
 
 #include "AForm.class.hpp"
 
-class RobotomyRequestForm: public AForm
+class ShrubberyCreationForm: public AForm
 {
 	public:
-		RobotomyRequestForm(std::string target);
-		RobotomyRequestForm(const RobotomyRequestForm &other);
-		~RobotomyRequestForm();
+		ShrubberyCreationForm(std::string target);
+		ShrubberyCreationForm(const ShrubberyCreationForm &other);
+		~ShrubberyCreationForm();
 
 		class FormNotSignedException : public std::exception
 		{
@@ -28,9 +28,12 @@ class RobotomyRequestForm: public AForm
 				virtual const char *what() const throw();
 		};
 
-		RobotomyRequestForm	&operator=(const RobotomyRequestForm &other);
+		ShrubberyCreationForm	&operator=(const ShrubberyCreationForm &other);
 
 		void	execute(Bureaucrat const & executor) const;
 };
+
+
+
 
 #endif

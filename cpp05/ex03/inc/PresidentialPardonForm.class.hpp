@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.class.hpp                      :+:      :+:    :+:   */
+/*   PresidentialPardonForm.class.hpp                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soutin <soutin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/13 13:35:39 by soutin            #+#    #+#             */
-/*   Updated: 2024/05/16 14:31:20 by soutin           ###   ########.fr       */
+/*   Created: 2024/05/13 13:35:27 by soutin            #+#    #+#             */
+/*   Updated: 2024/05/16 14:31:02 by soutin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMYREQUESTFORM_HPP
-#define ROBOTOMYREQUESTFORM_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+#define PRESIDENTIALPARDONFORM_HPP
 
 #include "AForm.class.hpp"
 
-class RobotomyRequestForm: public AForm
+class PresidentialPardonForm: public AForm
 {
 	public:
-		RobotomyRequestForm(std::string target);
-		RobotomyRequestForm(const RobotomyRequestForm &other);
-		~RobotomyRequestForm();
+		PresidentialPardonForm(std::string target);
+		PresidentialPardonForm(const PresidentialPardonForm &other);
+		~PresidentialPardonForm();
 
 		class FormNotSignedException : public std::exception
 		{
@@ -28,7 +28,7 @@ class RobotomyRequestForm: public AForm
 				virtual const char *what() const throw();
 		};
 
-		RobotomyRequestForm	&operator=(const RobotomyRequestForm &other);
+		PresidentialPardonForm	&operator=(const PresidentialPardonForm &other);
 
 		void	execute(Bureaucrat const & executor) const;
 };
